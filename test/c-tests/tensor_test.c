@@ -10,7 +10,6 @@ void two_d_tensor(){
 
     assert(t != NULL);
     assert(t->data != NULL);
-
     assert(t->n_dims == 2);
 
     for(int i = 0; i < t->n_dims; ++i){
@@ -27,6 +26,7 @@ void three_d_tensor(){
 
     assert(t != NULL);
     assert(t->data != NULL);
+    assert(t->n_dims == 3);
 
     for(int i = 0; i < t->n_dims; ++i){
         assert(t->shape[i] == test_shape[i]);
@@ -42,6 +42,7 @@ void four_d_tensor(){
 
     assert(t != NULL);
     assert(t->data != NULL);
+    assert(t->n_dims == 4);
 
     for(int i = 0; i < t->n_dims; ++i){
         assert(t->shape[i] == test_shape[i]);
