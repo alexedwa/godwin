@@ -5,7 +5,9 @@ LIB = godwin-lib.so
 BUILD_DIR = build
 
 SRC = src/core/tensor.c \
-	src/backend/cpu/matmul.c
+	src/backend/cpu/matmul.c \
+	src/backend/cpu/operations.c \
+	src/ml/supervised/linear_regression.c
 
 all: $(BUILD_DIR)/$(LIB)
 
@@ -22,6 +24,10 @@ test_tensor: all
 test_matmul: all
 	$(CC) $(CFLAGS) test/c-tests/matmul_test.c $(SRC) -o $(BUILD_DIR)/test_matmul.exe
 	./$(BUILD_DIR)/test_matmul.exe
+
+test_supervised: all
+	$(CC) $(CFLAGS) test/c-tests/supervised-ml.c $(SRC) -o $(BUILD_DIR)/test_supervised.exe
+	./$(BUILD_DIR)/test_supervised.exe
 
 
 clean:
