@@ -7,5 +7,6 @@
 
 // Public Libraries
 #include "godwin/tensor.h"
+#include "godwin/matmul.h"
 
 #endif
