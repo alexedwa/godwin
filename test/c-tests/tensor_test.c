@@ -56,7 +56,7 @@ int main(){
     three_d_tensor();
     four_d_tensor();
 
-    printf("\nTensor testing passed!\n");
+    printf("\nTensor Initialisation Test passed!\n\n");
 
     return 0;
 }
