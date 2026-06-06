@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <assert.h>
-#include <stdlib.h>
-
 #include <godwin/godwin.h>
 
 void two_d_tensor(){
