@@ -9,5 +9,6 @@
 #include "godwin/tensor.h"
 #include "godwin/matmul.h"
 #include "godwin/supervised.h"
+#include "godwin/operations.h"
 
 #endif

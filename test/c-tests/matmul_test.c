@@ -68,7 +68,7 @@ int main() {
     gemv_test();
     gemm_test();
 
-    printf("\nMatrix Multiplication Test passed!\n\n");
+    printf("\nMatrix Multiplication Test passed!\n");
     return 0;
 }
 
