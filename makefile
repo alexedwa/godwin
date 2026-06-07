@@ -7,7 +7,8 @@ BUILD_DIR = build
 SRC = src/core/tensor.c \
 	src/backend/cpu/matmul.c \
 	src/backend/cpu/operations.c \
-	src/ml/supervised/linear_regression.c
+	src/ml/supervised/linear_regression.c \
+	src/ml/supervised/logistic_regression.c 
 
 all: $(BUILD_DIR)/$(LIB)
 
@@ -28,7 +29,7 @@ test_matmul: all
 test_supervised: all
 	$(CC) $(CFLAGS) test/c-tests/supervised-ml.c $(SRC) -o $(BUILD_DIR)/test_supervised.exe
 	./$(BUILD_DIR)/test_supervised.exe
-
+	
 
 clean:
 	rm -rf $(BUILD_DIR)
