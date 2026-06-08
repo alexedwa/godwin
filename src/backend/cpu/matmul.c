@@ -20,9 +20,9 @@ void tensor_gemv(Tensor* a, Tensor* b, Tensor* out){
     for(int i = 0; i < a_row; ++i){
         float val = 0.0f;
         for(int j = 0; j<  a_col; ++j){
-            val += a->data[i * a->stride[0] + j] * b->data[j];
+            val += a->data[i * a->stride[0] + j * a->stride[1]] * b->data[j * b->stride[0]];
         }
-        out->data[i] = val;
+        out->data[i * out->stride[0]] = val;
     }
 }
 
@@ -30,6 +30,8 @@ void tensor_gemm(Tensor* a, Tensor* b, Tensor* out){
     int a_row = a->shape[0];
     int a_col = a->shape[1];
     int b_col = b->shape[1];
+
+    assert(b->shape[0] == a->shape[1]);
 
     for(int i = 0; i < a_row; ++i){
         for(int j = 0; j < b_col; ++j){
