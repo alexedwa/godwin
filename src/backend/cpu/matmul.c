@@ -27,7 +27,7 @@ void tensor_gemv(Tensor* a, Tensor* b, Tensor* out){
 }
 
 void tensor_gemm(Tensor* a, Tensor* b, Tensor* out){
-    int a_row = b->shape[0];
+    int a_row = a->shape[0];
     int a_col = a->shape[1];
     int b_col = b->shape[1];
 
