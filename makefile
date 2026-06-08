@@ -11,8 +11,8 @@ SRC = src/core/tensor.c \
 all: $(BUILD_DIR)/$(LIB)
 
 $(BUILD_DIR)/$(LIB): $(SRC)
-	mkdir -p $(BUILD_DIR)
-	$(CC) $(CFLAGS) -shared $(SRC) -o $(BUILD_DIR)/$(LIB)
+	@mkdir -p $(BUILD_DIR)
+	@$(CC) $(CFLAGS) -shared $(SRC) -o $(BUILD_DIR)/$(LIB)
 
 test_all: test_tensor test_matmul test_supervised
 

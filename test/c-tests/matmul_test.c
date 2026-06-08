@@ -30,6 +30,7 @@ void gemv_test(){
     free_tensor(t1);
     free_tensor(t2);
     free_tensor(t3);
+    printf("\nTest: GEMV Passed!\n");
 }
 
 void gemm_test(){
@@ -62,13 +63,14 @@ void gemm_test(){
     free_tensor(t1);
     free_tensor(t2);
     free_tensor(t3);
+
+    printf("\nTest: GEMM Passed!\n");
 }
 
 int main() {
     gemv_test();
     gemm_test();
 
-    printf("\nMatrix Multiplication Test passed!\n");
     return 0;
 }
 
