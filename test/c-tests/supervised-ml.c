@@ -112,12 +112,16 @@ void softmax_regression_test(){
 
     softmax_regression(x, w, b, out);
 
-    assert(fabs(out->data[0] == 0.705384) < 1e-4f);
-    assert(fabs(out->data[1] == 0.259496) < 1e-4f);
-    assert(fabs(out->data[2] == 0.035119) < 1e-4f);
-    assert(fabs(out->data[3] == 0.951747) < 1e-4f);
-    assert(fabs(out->data[4] == 0.047385) < 1e-4f);
-    assert(fabs(out->data[5] == 0.000868) < 1e-4f);
+    assert(fabs(out->data[0] - 0.705384) < 1e-4f);
+    assert(fabs(out->data[1] - 0.259496) < 1e-4f);
+    assert(fabs(out->data[2] - 0.035119) < 1e-4f);
+    assert(fabs(out->data[3] - 0.951747) < 1e-4f);
+    assert(fabs(out->data[4] - 0.047385) < 1e-4f);
+    assert(fabs(out->data[5] - 0.000868) < 1e-4f);
+
+    float loss = cross_entropy_loss(out, w);
+    
+    assert(fabs(loss - 1.699233) < 1e-4f);
 
     free_tensor(x);
     free_tensor(w);

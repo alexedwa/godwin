@@ -6,7 +6,7 @@ BUILD_DIR = build
 
 SRC = src/core/tensor.c \
 	src/backend/cpu/*.c \
-	src/ml/supervised/*.c 
+	src/ml/*/*.c
 
 all: $(BUILD_DIR)/$(LIB)
 
