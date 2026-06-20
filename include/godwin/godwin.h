@@ -13,5 +13,6 @@
 #include "godwin/matmul.h"
 #include "godwin/supervised.h"
 #include "godwin/operations.h"
+#include "godwin/loss.h"
 
 #endif
